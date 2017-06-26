@@ -129,9 +129,11 @@
 
          ;; --- powerline
          (powerline-active1 :inherit 'mode-line)
-         (powerline-active2 :inherit 'mode-line)
+         ;; (powerline-active2 :inherit 'mode-line)
+         (powerline-active2 :foreground ,cyan-2 :background ,base-1)
          (powerline-inactive1 :inherit 'mode-line-inactive)
-         (powerline-inactive2 :inherit 'mode-line-inactive)
+         (powerline-active2 :foreground ,cyan-0 :background ,base-2)
+         ;; (powerline-inactive2 :inherit 'mode-line-inactive)
 
          ;; --- rainbow-delimiters
 
