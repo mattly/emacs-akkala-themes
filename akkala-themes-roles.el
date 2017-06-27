@@ -11,7 +11,7 @@
    (subtle     :foreground base-2   :background base-1)
 
    (comment    :foreground base-3   :background base-1   :slant 'italic)
-   (definition :foreground base-4   :background base-1   :weight 'bold)
+   (definition :foreground base-4   :weight 'bold)
    (directive  :foreground base-4   :background purple-0)
    (keyword    :foreground base-4   :background red-0)
    (number     :foreground base-4   :background cyan-0)
@@ -25,9 +25,9 @@
    (link       :foreground blue-2   :weight 'bold        :underline t)
    (selection  :foreground base-4   :background red-0)
 
-   (error      :foreground base-0   :background red-2    :weight 'bold)
-   (warning    :foreground base-0   :background yellow-2 :weight 'bold)
-   (success    :foreground base-0   :background green-2  :weight 'bold)))
+   (error      :foreground red-2    :weight 'bold)
+   (warning    :foreground yellow-2 :weight 'bold)
+   (success    :foreground green-2  :weight 'bold)))
 
 (provide 'akkala-themes-roles)
 ;;; akkala-theme-roles.el ends here

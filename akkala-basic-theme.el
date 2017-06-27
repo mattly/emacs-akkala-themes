@@ -1,4 +1,4 @@
-;; akkala-theme-basic A proof-of-concept akkala-flat theme
+;; akkala-theme-basic --- A proof-of-concept akkala-flat theme
 
 ;;; Commentary:
 

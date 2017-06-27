@@ -145,9 +145,11 @@
          (which-key-group-description-face :foreground ,purple-2)
          (which-key-key-face :foreground ,blue-2 :weight bold)
          (which-key-local-map-description-face :weight bold)
-         (which-key-separator-face ,dim))))))
+         (which-key-separator-face ,dim)
 
          ;; === Major Modes ===============================
+         ;; --- Clojure
+         (clojure-keyword-face ,symbol))))))
 
 (provide 'akkala-themes-common)
 
