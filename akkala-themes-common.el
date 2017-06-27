@@ -5,14 +5,13 @@
 ;; Requires Emacs 24 or newer
 
 ;;; Code:
-(defun akkala/make-def (x)
+(defun akkala/make-role-def (x)
   "Defines a role from X."
   (list (car x) `(list ,@(cdr x))))
 
 (defmacro akkala/def-roles (name roles)
   "Defines at NAME a series of ROLES for use in a theme."
-  `(defvar ,name ',(mapcar #'akkala/make-def roles)))
-
+  `(defvar ,name ',(mapcar #'akkala/make-role-def roles)))
 
 (defun akkala/build-face (spec)
   "Builds a face specification from SPEC."
@@ -32,14 +31,14 @@
        `(;; === Emacs built-in & included plugins =========
          ;; --- base faces
          (default ,default)
-         (fringe :inherit 'default :foreground ,base-3)
+         (fringe :inherit 'default :foreground ,fg-dim)
          (region ,region)
          (highlight ,highlight)
          (cursor ,highlight)
          (minibuffer-prompt ,highlight)
          (shadow ,dim)
          (tooltip :inherit 'default)
-         (secondary-selection :background ,base-2)
+         (secondary-selection :background ,bg-dim)
          (lazy-highlight ,highlight)
          (match ,match)
          (trailing-whitespace ,warning)
@@ -67,11 +66,11 @@
          (font-lock-variable-name-face ,definition)
 
          ;; --- mode-line / header-line
-         (mode-line ,highlight)
+         (mode-line :foreground ,fg-main :background ,bg-focus)
          (mode-line-buffer-id :weight bold)
          ;; (mode-line-emphasis)
          ;; (mode-line-highlight)
-         (mode-line-inactive :background ,base-2 :foreground ,base-3)
+         (mode-line-inactive :background ,bg-dim :foreground ,fg-soft)
          ;; (header-line)
 
          ;; === Built-in Plugins
@@ -105,8 +104,10 @@
          (diredp-symlink ,directive)
 
          ;; evil
-         (evil-ex-substitute-matches     :foreground ,red-2   :background ,red-0   :underline t)
-         (evil-ex-substitute-replacement :foreground ,green-2 :background ,green-0 :underline t)
+         (evil-ex-substitute-matches     :foreground ,fg-red   :background ,bg-red
+                                         :underline t)
+         (evil-ex-substitute-replacement :foreground ,fg-green :background ,bg-green
+                                         :underline t)
          (evil-search-highlight-persist-highlight-face ,match)
 
          ;; helm
@@ -118,32 +119,31 @@
          (highlight-numbers-number ,number)
 
          ;; --- hlinum
-         (linum-highlight-face :weight bold)
+         (linum-highlight-face :foreground ,fg-focus :background ,bg-main
+                               :weight bold)
 
          ;; --- hydra
-         (hydra-face-red :foreground ,red-2 :weight bold)
-         (hydra-face-blue :foreground ,blue-2 :weight bold)
-         (hydra-face-amaranth :foreground ,purple-2 :weight bold)
-         (hydra-face-pink :foreground ,green-2 :weight bold)
-         (hydra-face-teal :foreground ,cyan-2 :weight bold)
+         (hydra-face-red :foreground ,fg-red :weight bold)
+         (hydra-face-blue :foreground ,fg-blue :weight bold)
+         (hydra-face-amaranth :foreground ,fg-purple :weight bold)
+         (hydra-face-pink :foreground ,fg-green :weight bold)
+         (hydra-face-teal :foreground ,fg-cyan :weight bold)
 
          ;; --- powerline
          (powerline-active1 :inherit 'mode-line)
-         ;; (powerline-active2 :inherit 'mode-line)
-         (powerline-active2 :foreground ,cyan-2 :background ,base-1)
+         (powerline-active2 :foreground ,fg-cyan :background ,bg-dim)
          (powerline-inactive1 :inherit 'mode-line-inactive)
-         (powerline-active2 :foreground ,cyan-0 :background ,base-2)
-         ;; (powerline-inactive2 :inherit 'mode-line-inactive)
+         (powerline-active2 :foreground ,fg-cyan :background ,bg-soft)
 
          ;; --- rainbow-delimiters
 
          ;; --- spaceline
-         (spaceline-highlight-face :foreground ,blue-2)
+         (spaceline-highlight-face :foreground ,fg-blue)
 
          ;; --- which-key
          (which-key-command-description-face ,default)
-         (which-key-group-description-face :foreground ,purple-2)
-         (which-key-key-face :foreground ,blue-2 :weight bold)
+         (which-key-group-description-face :foreground ,fg-purple)
+         (which-key-key-face :foreground ,fg-blue :weight bold)
          (which-key-local-map-description-face :weight bold)
          (which-key-separator-face ,dim)
 

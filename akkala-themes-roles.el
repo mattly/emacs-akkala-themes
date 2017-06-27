@@ -6,28 +6,34 @@
 (require 'akkala-themes-common)
 
 (akkala/def-roles akkala/flat-roles
-  ((default    :foreground base-4   :background base-1)
-   (dim        :foreground base-3   :background base-1)
-   (subtle     :foreground base-2   :background base-1)
+  ((default    :foreground fg-main  :background bg-main)
+   (dim        :foreground fg-dim)
+   (subtle     :foreground fg-soft)
 
-   (comment    :foreground base-3   :background base-1   :slant 'italic)
-   (definition :foreground base-4   :weight 'bold)
-   (directive  :foreground base-4   :background purple-0)
-   (keyword    :foreground base-4   :background red-0)
-   (number     :foreground base-4   :background cyan-0)
-   (operator   :foreground base-4   :background yellow-0)
-   (string     :foreground base-4   :background green-0)
-   (symbol     :foreground base-4   :background blue-0)
+   (comment    :foreground fg-dim
+               :slant 'italic)
+   (definition :foreground fg-main
+               :weight 'bold)
+   (directive  :foreground fg-main  :background bg-purple)
+   (keyword    :foreground fg-main  :background bg-red)
+   (number     :foreground fg-main  :background bg-cyan)
+   (operator   :foreground fg-main  :background bg-yellow)
+   (string     :foreground fg-main  :background bg-green)
+   (symbol     :foreground fg-main  :background bg-blue)
 
-   (region     :foreground base-4   :background base-0)
-   (highlight  :foreground base-4   :background base-0)
-   (match      :foreground green-2  :background base-0)
-   (link       :foreground blue-2   :weight 'bold        :underline t)
-   (selection  :foreground base-4   :background red-0)
+   (region     :foreground fg-main  :background bg-focus)
+   (highlight  :foreground fg-main  :background bg-focus)
+   (match      :foreground fg-green :background bg-focus)
+   (link       :foreground fg-blue
+               :weight 'bold        :underline t)
+   (selection  :foreground fg-main  :background bg-red)
 
-   (error      :foreground red-2    :weight 'bold)
-   (warning    :foreground yellow-2 :weight 'bold)
-   (success    :foreground green-2  :weight 'bold)))
+   (error      :foreground fg-red
+               :weight 'bold)
+   (warning    :foreground fg-yellow
+               :weight 'bold)
+   (success    :foreground fg-green
+               :weight 'bold)))
 
 (provide 'akkala-themes-roles)
 ;;; akkala-theme-roles.el ends here

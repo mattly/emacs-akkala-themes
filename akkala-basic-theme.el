@@ -1,31 +1,35 @@
 ;; akkala-theme-basic --- A proof-of-concept akkala-flat theme
 
 ;;; Commentary:
+;; What do you want from me?
 
 ;;; Code:
 (require 'akkala-themes)
 (require 'akkala-themes-roles)
 
 (defvar akkala/basic-colors
-  '(
-     (base-0    "#ffffff")
-     (base-1    "#eeeeee")
-     (base-2    "#aaaaaa")
-     (base-3    "#444444")
-     (base-4    "#222222")
-     (blue-0    "#ddddff")
-     (blue-2    "#1111aa")
-     (cyan-0    "#ddffff")
-     (cyan-2    "#11aaaa")
-     (green-0   "#ddffdd")
-     (green-2   "#11aa11")
-     (purple-0  "#ffaaff")
-     (purple-2  "#aa11aa")
-     (red-0     "#ffdddd")
-     (red-2     "#aa1111")
-     (yellow-0  "#ffffdd")
-     (yellow-1  "#dddd44")
-     (yellow-2  "#aaaa11")))
+  '((bg-focus "#ffffff")
+    (bg-main  "#eeeeee")
+    (bg-dim   "#e2e2e2")
+    (bg-soft  "#dddddd")
+    (fg-soft  "#666666")
+    (fg-dim   "#444444")
+    (fg-main  "#222222")
+    (fg-focus "#000000")
+
+    (bg-red    "#ffdddd")
+    (bg-purple "#ffaaff")
+    (bg-blue   "#ddddff")
+    (bg-cyan   "#ddffff")
+    (bg-green  "#ddffdd")
+    (bg-yellow "#ffffdd")
+
+    (fg-red    "#aa1111")
+    (fg-purple "#aa11aa")
+    (fg-blue   "#1111aa")
+    (fg-cyan   "#11aaaa")
+    (fg-green  "#11aa11")
+    (fg-yellow "#aaaa11")))
 
 (def-akkala-theme akkala-basic akkala/basic-colors akkala/flat-roles)
 
