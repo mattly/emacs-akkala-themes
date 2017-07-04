@@ -75,8 +75,14 @@
 
          ;; === Built-in Plugins
 
+         (hl-line :underline ,bg-focus)
+
          ;; --- linum-mode
          (linum ,subtle)
+
+         ;; --- parens
+         (show-paren-match ,match)
+         (show-paren-mismatch ,warning)
 
          ;; --- window-divider
          (window-divider :inherit 'vertical-border)
@@ -104,11 +110,23 @@
          (diredp-symlink ,directive)
 
          ;; evil
+         (evil-ex-search ,match)
          (evil-ex-substitute-matches     :foreground ,fg-red   :background ,bg-red
                                          :underline t)
          (evil-ex-substitute-replacement :foreground ,fg-green :background ,bg-green
                                          :underline t)
          (evil-search-highlight-persist-highlight-face ,match)
+
+         ;; --- git gutter & co
+         (git-gutter:added :foreground ,bold-green)
+         (git-gutter+-added :foreground ,bold-green)
+         (git-gutter-fr+-added :foreground ,bold-green)
+         (git-gutter:deleted :foreground ,bold-red)
+         (git-gutter+-deleted :foreground ,bold-red)
+         (git-gutter-fr+-deleted :foreground ,bold-red)
+         (git-gutter:modified :foreground ,bold-yellow)
+         (git-gutter+-modified :foreground ,bold-yellow)
+         (git-gutter-fr+-modified :foreground ,bold-yellow)
 
          ;; helm
          (helm-selection ,selection)
@@ -129,16 +147,38 @@
          (hydra-face-pink :foreground ,fg-green :weight bold)
          (hydra-face-teal :foreground ,fg-cyan :weight bold)
 
+         ;; --- ivy
+         (ivy-current-match ,match)
+
+         ;; --- magit
+         (magit-branch-current :background ,bg-purple :weight bold)
+         (magit-branch-local :background ,bg-blue)
+         (magit-branch-remote :background ,bg-green)
+         (magit-section-heading :background ,bg-yellow :weight bold)
+
+         (magit-diff-hunk-heading :background ,bg-dim :foreground ,fg-dim)
+         (magit-diff-hunk-heading-highlight :background ,bg-focus :foreground ,fg-main)
+         (magit-diff-added :background ,bg-green :foreground ,fg-dim)
+         (magit-diff-added-highlight :background ,bg-focus-green :foreground ,fg-main)
+         (magit-diff-removed :background ,bg-red :foreground ,fg-dim)
+         (magit-diff-removed-highlight :background ,bg-focus-red :foreground ,fg-main)
+
          ;; --- powerline
          (powerline-active1 :inherit 'mode-line)
          (powerline-active2 :foreground ,fg-cyan :background ,bg-dim)
          (powerline-inactive1 :inherit 'mode-line-inactive)
          (powerline-active2 :foreground ,fg-cyan :background ,bg-soft)
+         (powerline-inactive2 :background ,bg-dim)
 
          ;; --- rainbow-delimiters
 
          ;; --- spaceline
          (spaceline-highlight-face :foreground ,fg-blue)
+
+         ;; --- spacemacs
+         (spacemacs-normal-face :background ,bold-yellow :foreground ,fg-main)
+         (spacemacs-insert-face :background ,bold-green :foreground ,fg-main)
+         (spacemacs-visual-face :background ,bg-soft :foreground ,fg-main)
 
          ;; --- which-key
          (which-key-command-description-face ,default)
@@ -149,7 +189,17 @@
 
          ;; === Major Modes ===============================
          ;; --- Clojure
-         (clojure-keyword-face ,symbol))))))
+         (clojure-keyword-face ,symbol)
+         ;; --- Markdown
+         (markdown-code-face :background ,bg-yellow)
+         (markdown-header-face :background ,bg-purple :weight bold)
+         (markdown-header-delimiter-face :background ,bg-purple :foreground ,fg-soft)
+         (markdown-inline-code-face :background ,bg-yellow)
+         (markdown-link-face :background ,bg-blue)
+         (markdown-link-title-face :background ,bg-blue)
+         (markdown-list-face :weight bold)
+         (markdown-pre-face :background ,bg-yellow)
+         (markdown-reference-face :background ,bg-blue))))))
 
 (provide 'akkala-themes-common)
 
